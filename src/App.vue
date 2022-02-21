@@ -1,35 +1,47 @@
-<script setup lang="ts">
-
+<script lang="ts">
+export default {
+  data() {
+    return {
+      message: "Hello World!",
+      isRed: true,
+      color: "green",
+      number1: 1,
+      number2: 2,
+    };
+  },
+};
 </script>
 
 <template>
- <div id="app">
-  <div class="row">
-    <span>1</span>
-    <span>+</span>
-    <span>1</span>
-    <span>=</span>
-    <span>2</span>
+  <div id="app">
+    <div class="row">
+      <input v-model="number1" />
+
+      <span>+</span>
+      <input v-model="number2" />
+      <span>=</span>
+      <span>{{ number1 + number2 }}</span>
+    </div>
+
+    <input v-model="message" />
+
+    {{ message }}
   </div>
-  <div class="row second">
-    <p>My favorite kind of taco is Al Pastor</p>
-  </div>
-</div>
 </template>
 
 <style>
-
 .row {
   margin: 50px;
   display: flex;
   justify-content: center;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
-input, span {
+input,
+span {
   padding: 10px;
   font-size: 30px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 input {
@@ -38,12 +50,5 @@ input {
 
 span {
   width: 20px;
-}
-
-.second {
-  font-size: 18px;
-  p {
-    margin-left: 20px;
-  }
 }
 </style>
